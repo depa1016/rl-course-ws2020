@@ -10,13 +10,17 @@ This file plays episodes in the 4x4 lake environment using a random policy until
 This is repeated for 100 iterations.
 - After every episode, calculate the Q-values with every-visit MC prediction using
 the average mean method and no discount on the reward, i.e.:
-
-$V(s) \leftarrow V(s) + 1/N(s) (G-V(s))$
+```
+Q(s,a) =  Q(s,a) + 1/N(s,a) *  (G-Q(s,a))
+```
 
 - After every successful episode, print out the current Q-values.
 
 ### Task 2:
-We use now the learned Q-values to simulate episodes:
+Use now the learned Q-values to simulate episodes:
 
 - After every successful episode, in addition to printing the Q-values run 100 episodes using a greedy policy on the current Q-values.
 - Print the average reward per episode for those 100 episodes.
+
+### Bonus Task:
+Repeat task 1 and 2, but this time use TD-Prediction for estimating the Q-values.
