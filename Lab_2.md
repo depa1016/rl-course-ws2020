@@ -8,7 +8,11 @@ and implement the concept of Q-value prediction with Monte Carlo prediction.
 - Download and execute `2_FrozenLake_Prediction.py` on GitHub.
 This file plays episodes in the 4x4 lake environment using a random policy until a reward is earned.
 This is repeated for 100 iterations.
-- After every episode, calculate the Q-values with every-visit MC prediction using the average mean method and no discount on the reward.
+- After every episode, calculate the Q-values with every-visit MC prediction using
+the average mean method and no discount on the reward, i.e.:
+
+$V(s) \leftarrow V(s) + 1/N(s) (G-V(s))$
+
 - After every successful episode, print out the current Q-values.
 
 ### Task 2:
