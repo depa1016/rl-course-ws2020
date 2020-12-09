@@ -3,6 +3,8 @@ import gym
 
 env = gym.make("FrozenLake-v0")
 random.seed(0)
+np.random.seed(0)
+env.seed(0)
 
 print("## Frozen Lake ##")
 print("Start state:")

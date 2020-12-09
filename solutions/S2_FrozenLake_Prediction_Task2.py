@@ -4,6 +4,8 @@ import numpy as np
 
 env = gym.make("FrozenLake-v0")
 random.seed(0)
+np.random.seed(0)
+env.seed(0)
 
 print("## Frozen Lake ##")
 print("Start state:")
@@ -60,7 +62,7 @@ def main():
             q_values[q] += 1/q_counters[q] * (return_i - q_values[q])
 
         if sum(r_s) > 0:
-            print_q_values(q_values)
+            # print_q_values(q_values)
             all_rewards = 0
             for i in range(0, 100):
                 s_a, rewards = play_episode(q_values)
