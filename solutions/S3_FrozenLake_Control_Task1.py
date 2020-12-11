@@ -41,9 +41,8 @@ def play_episode(q_values, epsilon):
 def choose_action(q_values, state, epsilon):
     if random.random() > epsilon:
         relevant_qs = [q_values[(state, a)] for a in range(0, env.action_space.n)]
-        q_s = [np.mean(rewards) for rewards in relevant_qs]
         # there can be more than one best action
-        best_actions_indexes = [i for i, v in enumerate(q_s) if v == max(q_s)]
+        best_actions_indexes = [i for i, v in enumerate(relevant_qs) if v == max(relevant_qs)]
         # in this case randomly choose on of them
         return random.choice(best_actions_indexes)
     else:
