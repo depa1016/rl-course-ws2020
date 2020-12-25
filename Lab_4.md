@@ -24,5 +24,5 @@ Hint: Since the network outputs raw scores, you need to apply the [softmax](http
 function to normalize the network's output to probabilities.
 
 ### Bonus Task:
-Train a model on the MNIST dataset and see how accurate you can get
+Train a model on the digits dataset and see how accurate you can get
 (use https://github.com/pabair/ml-kurs/blob/master/2_Logistische_Regression.ipynb as template).
